@@ -1,0 +1,13 @@
+.tweet-main-container {
+  display: flex;
+  margin: 10px;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.tweet-container {
+  max-width: 260px;
+  padding-left: 10px;
+}
