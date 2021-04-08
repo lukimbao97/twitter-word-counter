@@ -1,6 +1,7 @@
 .tweet-main-container {
   display: flex;
   margin: 10px;
+  border-bottom: 2px inset;
 }
 
 img {
@@ -8,6 +9,22 @@ img {
 }
 
 .tweet-container {
-  max-width: 260px;
-  padding-left: 10px;
+  max-width: 70%;
+  padding: 10px 0 5px 10px;
+  font-size: 20px;
+}
+
+.name-tweet-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.username-wrapper {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.tagname-wrapper {
+  margin-left: 10px;
+  color: gray;
 }

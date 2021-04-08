@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test-changes-from-word-counter-component 1`] = `
+<div
+  className="world-count-wrapperundefined"
+>
+  <span />
+</div>
+`;
