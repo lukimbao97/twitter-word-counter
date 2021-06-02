@@ -1,18 +1,37 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import "../css/Tweet.css";
 
-const Tweet = ({ tagName, userName, tweet, avatar }) => {
+const URL = 'https://desolate-springs-52160.herokuapp.com';
+
+const Tweet = () => {
+  const [tweets, setTweets] = useState([]);
+
+  useEffect(() => {
+    async function getTweets() {
+      const result = await axios.get(`${URL}/api/tweets`);
+      setTweets(result.data);
+      console.log(result.data);
+    }
+
+    getTweets();
+  }, [tweets]);
+
   return (
-    <div className="tweet-main-container">
-      <div>
-        <img src={avatar} alt="" />
-      </div>
-      <div className="name-tweet-wrapper">
-        <span className="username-wrapper">{userName}</span>
-        <span className="tagname-wrapper">{tagName}</span>
-        <div className="tweet-container">{tweet}</div>
-      </div>
-    </div>
+    <React.Fragment>
+      {tweets.map((t) => (
+        <div className="tweet-main-container">
+          <div>
+            <img src={t.avatar} alt="" />
+          </div>
+          <div className="name-tweet-wrapper">
+            <span className="username-wrapper">{t.userName}</span>
+            <span className="tagname-wrapper">{t.tagName}</span>
+            <div className="tweet-container">{t.tweet}</div>
+          </div>
+        </div>
+      ))}
+    </React.Fragment>
   );
 };
 
