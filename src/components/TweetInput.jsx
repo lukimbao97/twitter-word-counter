@@ -25,8 +25,9 @@ function TweetInput() {
     const [tweetObj] = useState({ userName: 'BaoLK', tagName: '@Bao', avatar: 'https://picsum.photos/id/237/50/50', tweet: '' })
 
     const compareChara = () => {
-        if (tweet.length === 0) return true;
-        return limitChara - tweet.length < 0 ? true : false;
+        const tweetValue = tweet.trim();
+        if (tweetValue.length === 0) return true;
+        return limitChara - tweetValue.length < 0 ? true : false;
     };
 
     const handlePostTweet = async () => {
@@ -62,8 +63,8 @@ function TweetInput() {
                 />
             </div>
             <WordCounter
-                handleCircleColor={() => handleCircleColor(tweet.length)}
-                handleCountWords={() => handleCountWords(tweet.length)}
+                handleCircleColor={() => handleCircleColor(tweet.trim().length)}
+                handleCountWords={() => handleCountWords(tweet.trim().length)}
             />
         </div>
     );

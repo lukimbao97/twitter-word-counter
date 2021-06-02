@@ -35,5 +35,5 @@ textarea {
 }
 
 textarea:focus {
-  outline: none;
+  outline-color: black;
 }
